@@ -1,0 +1,123 @@
+.container {
+    margin: auto;
+    margin-top: 5vh; 
+    display: flex;
+    gap: 10vw;
+    align-items: flex-start;
+    height: 80vh;
+    border-radius: 5px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10vw;
+    gap: 5vh;
+    color: #464646;
+    left: 20vw;
+    top: 10%;
+}
+
+.age {
+    font-size: 8vh;
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    font-size: 5vh;
+}
+
+.key {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 2vh;
+}
+
+.value {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 3vh;
+}
+
+.about {
+    font-size: 2vh;
+    width: 20vw;
+    word-wrap: break-all;
+}
+
+.charact {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.hobbie-field {
+    gap: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    width: 30vw;
+    overflow-wrap: break-word;
+}
+
+.photo {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 56.25vh;
+    height: 75vh;
+    border-radius: 5px;
+    right: 15vw;
+    top: 5%;
+}
+
+.row {
+    display: flex;
+    gap: 1vw;
+    flex-direction: row;
+}
+
+.edit {
+    width: 274px;
+    height: 51px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #1E34F5 0%, #3E83E7 100%);
+    color: #FFF;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.back {
+    width: 274px;
+    height: 51px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #f51e1e 0%, #fa7474 100%);
+    color: #FFF;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}
+
+.editable {
+    display: flex;
+    width: 20vw;
+    height: 3vh;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #FFF 0%, #FFF 100%);
+    border: none;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

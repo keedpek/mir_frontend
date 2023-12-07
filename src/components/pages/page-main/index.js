@@ -6,6 +6,8 @@ import { PageReg } from '../page-reg';
 import { PageAuth } from '../page-auth';
 import { useState } from 'react';
 
+import { PageQuest } from '../page-quest';
+
 export const PageMain = () => {
     const [isAuthVisible, setIsAuthVisible] = useState(false);
     const [isRegVisible, setIsRegVisible] = useState(false);
@@ -26,7 +28,8 @@ export const PageMain = () => {
                     <PageReg onExitClick={() => setIsRegVisible(false)}/>
                 </div>
             )}
+
+            <PageQuest />
         </div>
     );
 };
-

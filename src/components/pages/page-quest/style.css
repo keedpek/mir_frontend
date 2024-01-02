@@ -47,7 +47,7 @@
 .about {
     font-size: 2vh;
     width: 20vw;
-    word-wrap: break-all;
+    word-wrap: break-word;
 }
 
 .charact {
@@ -105,7 +105,6 @@
     font-size: 18px;
     margin-left: auto;
     margin-right: auto;
-    display: none;
 }
 
 .editable {

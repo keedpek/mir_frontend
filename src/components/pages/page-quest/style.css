@@ -28,6 +28,9 @@
 
 .name {
     font-size: 5vh;
+    display: flex;
+    flex-direction: row;
+    gap: 10vw;
 }
 
 .key {

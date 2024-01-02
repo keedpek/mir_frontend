@@ -125,8 +125,11 @@ export const PageQuest = () => {
                 <div className="container">
                     <div className='info'>
                         <div className='name'>
-                            <h3 className='editableText' id="firstname">{user.firstname}</h3>
-                            <h3 className='editableText' id="lastname">{user.lastname}</h3>
+                            <div>
+                                <h3 className='editableText' id="firstname">{user.firstname}</h3>
+                                <h3 className='editableText' id="lastname">{user.lastname}</h3>
+                            </div>
+                            <p className='age'>{user.age}</p>
                         </div>
                         <div className='charact'>
                             <h3 className='row'>
@@ -170,8 +173,11 @@ export const PageQuest = () => {
                 <div className="container">
                     <div className='info'>
                         <div className='name'>
-                            <input value={editedUser.firstname} id='firstname' className='editable' onChange={(e) => handleInputChange(e.target.id, e.target.value)}></input>
-                            <input value={editedUser.lastname} id='lastname' className='editable' onChange={(e) => handleInputChange(e.target.id, e.target.value)}></input>
+                            <div>
+                                <input value={editedUser.firstname} id='firstname' className='editable' onChange={(e) => handleInputChange(e.target.id, e.target.value)}></input>
+                                <input value={editedUser.lastname} id='lastname' className='editable' onChange={(e) => handleInputChange(e.target.id, e.target.value)}></input>
+                            </div>
+                            <p className='age'>{user.age}</p>
                         </div>
                         <div className='charact'>
                             <h3 className='row'>

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { RegHeader } from './reg-header/header';
 import { FormEmail } from './forms/form-email';
 import { FormInfo } from './forms/form-info';
@@ -42,9 +43,12 @@ export const PageReg = () =>
             interests: [],
         },
         form5: {
-            
+            country: '',
+            city: '',
         }
     });
+
+    const navigate = useNavigate();
 
     const validate = 
     {
@@ -82,7 +86,7 @@ export const PageReg = () =>
                 setError('');
                 return true;
             }
-            setError('Заполните все поля!')
+            setError('* - заполните все обязятельные поля!')
             return false;
         },
         form3: function()
@@ -162,6 +166,9 @@ export const PageReg = () =>
                             email: formData.form1.email,
                             password: formData.form1.password,
                     })
+                })
+                .then(() => {
+                    navigate('/');
                 })
         }, 2000)
     }; 

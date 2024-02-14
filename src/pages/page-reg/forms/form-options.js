@@ -27,12 +27,8 @@ export const FormOptions = (props) =>
 
     return(
         <div className='form'>        
-            <h1>
-                Заполните ваш профиль 
-            </h1>
-            <h2>
-                Я ищу
-            </h2>
+            <h1>Заполните ваш профиль</h1>
+            <h2> Я ищу{props.error && <sup className='error'>*</sup>} </h2>
             <div className="button-list">
                 {goals.map((option) => (
                     <label key={option} className="radio-button-label" style={{backgroundColor: props.formData.goal === option ? '#7653EB' : '#f2f2f2'}}>
@@ -49,9 +45,7 @@ export const FormOptions = (props) =>
                     </label>
                 ))}
             </div>
-            <h2>
-                Отношение к курению
-            </h2>
+            <h2>Отношение к курению{props.error && <sup className='error'>*</sup>}</h2>
             <div className="button-list">
                 {smoking.map((option) => (
                     <label key={option} className="radio-button-label" style={{backgroundColor: props.formData.smoking === option ? '#7653EB' : '#f2f2f2'}}>
@@ -68,9 +62,7 @@ export const FormOptions = (props) =>
                     </label>
                 ))}
             </div>            
-            <h2>
-                Как часто занимаешься спортом 
-            </h2>
+            <h2>Как часто занимаешься спортом{props.error && <sup className='error'>*</sup>}</h2>
             <div className="button-list">
                 {sport.map((option) => (
                     <label key={option} className="radio-button-label" style={{backgroundColor: props.formData.sport === option ? '#7653EB' : '#f2f2f2'}}>

@@ -6,7 +6,7 @@ export const FormInfo = (props) =>
     return(
         <div className='form'>        
             <h1>Заполните Ваш профиль</h1>
-            <h2>Имя</h2>
+            <h2>Имя{props.error && <sup className='error'>*</sup>}</h2>
             <input
                 className='text-input'
                 placeholder='Полное имя'
@@ -19,7 +19,7 @@ export const FormInfo = (props) =>
                 value={props.formData.fullname}
             />
 
-            <h2>Дата рождения</h2>
+            <h2>Дата рождения{props.error && <sup className='error'>*</sup>}</h2>
             <div className='birthday-input-container'>
                 <input
                     className='text-input'
@@ -68,7 +68,7 @@ export const FormInfo = (props) =>
                 />
             </div>
 
-            <h2>Выберите пол</h2>
+            <h2>Выберите пол{props.error && <sup className='error'>*</sup>}</h2>
             <div className='radio-container'>
                 <label className="radio-button-label" style={{backgroundColor: props.formData.gender === "Male" ? '#7653EB' : '#f2f2f2'}}>
                     <input
@@ -110,7 +110,6 @@ export const FormInfo = (props) =>
                 value={props.formData.about}
             />
 
-            {props.error && <p className='error'>{props.error}</p>}
 
             <h2>Ваши фотографии</h2>
             <div className='image-container'>
@@ -121,6 +120,8 @@ export const FormInfo = (props) =>
                     <path d="M61.218 95.7775V65.0796" stroke="#AAAAAA" stroke-width="2.45583" stroke-linecap="round"/>
                 </svg>
             </div>
+
+            {props.error && <p className='error' style={{marginBottom: '50px'}}>{props.error}</p>}
         </div>
     )
 }   

@@ -10,7 +10,7 @@ export const RegHeader = (props) =>
                 LOGO
             </h1>
             <div className='progress-bar'>
-                <div className='progress-bar-progress' style={{width: `${props.curStep * 20}%`}}></div>
+                <div className='progress-bar-progress' style={{width: `${props.curStep * 16.67}%`}}></div>
                 <div className='progress-bar-bar'></div>
             </div>
         </div>

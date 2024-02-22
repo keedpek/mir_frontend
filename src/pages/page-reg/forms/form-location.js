@@ -103,11 +103,10 @@ export const FormLocation = (props) =>
                     value={countries.find(country => country.value === props.formData.country)}
                     options={countries}
                     onChange={(e) => {
-                        console.log(e)
                         props.updateFormData(
                         {
-                            ...props.formData,
                             country: e.value,
+                            city: '',
                         })}}
                 />
                 <h2>Город</h2>
@@ -115,12 +114,18 @@ export const FormLocation = (props) =>
                     value={props.formData.country ? 
                         cities.find(country => country.country === props.formData.country).cityList.find(city => city.value === props.formData.city)
                         :
-                        ''
+                        {
+                            value: 'none',
+                            label: 'Сначала выберите страну'
+                        }
                     }
                     options={props.formData.country ? 
                         cities.find(country => country.country === props.formData.country).cityList
                         :
-                        ''
+                        {
+                            value: 'none',
+                            label: 'Выберите город'
+                        }
                     }
                     onChange={(e) => {
                         props.updateFormData(
@@ -129,6 +134,7 @@ export const FormLocation = (props) =>
                             city: e.value,
                         })}}
                 />
+                <select></select>
             </div>
             :
             <div className='location-form'>    

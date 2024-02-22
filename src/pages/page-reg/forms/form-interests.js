@@ -4,14 +4,37 @@ import './form.css'
 export const FormInterests = (props) =>
 {
     const interests = [
-        'Active partner',
-        'Casual dating',
-        'Experiments open',
-        'Sugar daddy',
-        'Secret meetengs',
-        'Roleplay costumes',
-        'Romance',
-        'BDSM'
+        'Фотография',
+        'Кинотеатры',
+        'Компьютерные игры',
+        'Тусовки и клубы',
+        'Здоровая еда',
+        'Вегетарианство',
+        'Суши',
+        'Пицца',
+        'Рисование',
+        'Настольные игры',
+        'Активный отдых',
+        'Фитнес',
+        'Трен. зал',
+        'Кофе',
+        'Чай',
+        'Пение',
+        'Танцы',
+        'Бег',
+        'Кошки',
+        'Собаки',
+        'Театры',
+        'Велосипед',
+        'Музыка',
+        'Классическая музыка',
+        'Хип-хоп',
+        'Рэп',
+        'Техно',
+        'Рок',
+        'Поп-музыка',
+        'Меломан',
+        'Рыбки',
     ];
     
     const handleOptionChange = (option) => {
@@ -31,11 +54,11 @@ export const FormInterests = (props) =>
                 {interests.map((interest, index) => (
                     <label key={index} className='check-button' 
                     style={{
-                        bottom: `50px`, 
-                        left: `${index * 150 + 300}px`, 
+                        bottom: `${50 + (Math.random() * 200)}px`, 
+                        left: `${300 + (Math.random() * 1000)}px`,
                         backgroundColor: props.formData.interests.includes(interest) ? '#7653EB' : '#f2f2f2',
-                        width: props.formData.interests.includes(interest) ? '120px' : '100px',
-                        height: props.formData.interests.includes(interest) ? '120px' : '100px',
+                        width: props.formData.interests.includes(interest) ? '120px' : '70px',
+                        height: props.formData.interests.includes(interest) ? '120px' : '70px',
                         }}>
                         <input
                             type="checkbox"

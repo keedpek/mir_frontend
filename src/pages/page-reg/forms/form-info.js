@@ -96,6 +96,20 @@ export const FormInfo = (props) =>
                 </label>
             </div>
 
+            <h2>Рост{props.error && <sup className='error'>*</sup>}</h2>
+            <input
+                className='text-input'
+                placeholder='См'
+                style={{width: '30%'}}
+                onChange={(e) => {
+                    props.updateFormData(
+                    {
+                        ...props.formData,
+                        height: e.target.value,
+                    })}}
+                value={props.formData.height}
+            />
+
             <h2>Расскажи о себе</h2>
             <input
                 className='text-input'

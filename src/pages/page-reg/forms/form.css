@@ -301,8 +301,6 @@ img{
     cursor: pointer;
     padding: 10px;
     border-radius: 70px;
-    width: 100px;
-    height: 100px;
 }
 
 .check-button input{
@@ -323,7 +321,7 @@ img{
     text-align: center;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 18px;
+    font-size: 10px;
 }
 
 /*(6)*/

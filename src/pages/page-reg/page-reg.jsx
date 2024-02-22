@@ -31,22 +31,112 @@ export const PageReg = () =>
                 year: '',
             },
             gender: "none",
+            height: '',
             about: "",
             photos: []
         }, 
         form3: {
-            goal: "none",
-            smoking: "none",
-            sport: "none",
+            goal: 'none',
+            alcohol: 'none',
+            smoking: 'none',
+            sport: 'none',
         },
         form4: {
-            interests: [],
+            education: 'none',
+            zodiac: 'none',
+            type: 'none'
         },
         form5: {
+            interests: [],
+        },
+        form6: {
             country: '',
             city: '',
         }
     });
+
+
+    const options1 = [
+        {
+            key: 'goal',
+            label: 'Я ищу',
+            options: [
+                'Серьезные отношения',
+                'Флирт',
+                'Дружба',
+                'Ha одну ночь',
+            ]
+        },
+        {
+            key: 'alcohol',
+            label: 'Отношение к алкоголю',
+            options: [
+                'Пью часто',
+                'Иногда выпиваю',
+                'Не пью',
+                'Негативно',
+            ]
+        },
+        {
+            key: 'smoking',
+            label: 'Отношение к курению',
+            options: [
+                'Курю',
+                'Нормально',
+                'Негативно',
+            ]
+        },
+        {
+            key: 'sport',
+            label: 'Как часто занимаешься спортом',
+            options: [
+                'Часто занимаюсь',
+                'Иногда занимаюсь',
+                'Не занимаюсь',
+                'Не люблю спорт',
+            ]
+        },
+    ]
+    
+    const options2 = [
+        {
+            key: 'education',
+            label: 'Образование',
+            options: [
+                'Высшее',
+                'Среднее профессиональное',
+                'Основное общее',
+                'Незаконченное высшее',
+            ]
+        },
+        {
+            key: 'zodiac',
+            label: 'Знак зодиака',
+            options: [
+                'Овен',
+                'Телец',
+                'Близнецы',
+                'Рак',
+                'Лев',
+                'Дева',
+                'Весы',
+                'Скорпион',
+                'Стрелец',
+                'Козерог',
+                'Водолей',
+                'Рыбы',
+            ]
+        },
+        {
+            key: 'type',
+            label: 'По типажу я',
+            options: [
+                'Экстраверт',
+                'Интроверт',
+                'Амбиверт',
+            ]
+        },
+    ]
 
     const navigate = useNavigate();
 
@@ -81,7 +171,9 @@ export const PageReg = () =>
                 (formData.form2.birthDate.month < 13) &&  
                 (formData.form2.birthDate.year > 1900) &&  
                 (formData.form2.birthDate.year < 2025) &&  
-                (formData.form2.gender !== "none"))
+                (formData.form2.gender !== "none") &&
+                (formData.form2.height > 0) &&
+                (formData.form2.height < 250))
             {
                 setError('');
                 return true;
@@ -92,9 +184,9 @@ export const PageReg = () =>
         form3: function()
         {
             if (
-                (formData.form3.goal !== "none") &&
-                (formData.form3.smoking !== "none") &&
-                (formData.form3.sport !== "none") 
+                ((formData.form3.goal !== 'none') &&
+                (formData.form3.smoking !== 'none') &&
+                (formData.form3.sport !== 'none'))   
             )
             { 
                 setError('');
@@ -105,14 +197,28 @@ export const PageReg = () =>
         },
         form4: function()
         {
-            if (formData.form4.interests.length > 0) {
+            if (
+                ((formData.form4.education !== 'none') &&
+                (formData.form4.zodiac !== 'none') &&
+                (formData.form4.type !== 'none'))   
+            )
+            { 
+                setError('');
+                return true; 
+            }
+            setError('Выберите значение для каждого поля!');
+            return false;
+        },
+        form5: function()
+        {
+            if (formData.form5.interests.length > 0) {
                 setError('');
                 return true;
             }
             setError('Выберите как минимум один вариант!');
             return false;
         },
-        form5: function() {return true}
+        form6: function() {return true}
     }
  
     const updateFormData = (formName, data) => { 
@@ -180,11 +286,13 @@ export const PageReg = () =>
             case 2:
                 return <FormInfo formData={formData.form2} updateFormData={(data) => updateFormData('form2', data)} error={error}/> 
             case 3:
-                return <FormOptions formData={formData.form3} updateFormData={(data) => updateFormData('form3', data)} error={error}/>
+                return <FormOptions formData={formData.form3} options={options1} updateFormData={(data) => updateFormData('form3', data)} error={error}/>
             case 4:
-                return <FormInterests formData={formData.form4} updateFormData={(data) => updateFormData('form4', data)} error={error}/>
+                return <FormOptions formData={formData.form4} options={options2} updateFormData={(data) => updateFormData('form4', data)} error={error}/>
             case 5:
-                return <FormLocation formData={formData.form5} updateFormData={(data) => updateFormData('form5', data)} error={error}/>
+                return <FormInterests formData={formData.form5} updateFormData={(data) => updateFormData('form5', data)} error={error}/>
+            case 6:
+                return <FormLocation formData={formData.form6} updateFormData={(data) => updateFormData('form6', data)} error={error}/>
             default: 
                 return null; 
         } 
@@ -192,7 +300,7 @@ export const PageReg = () =>
     
     return(
         <div className='page-reg'>        
-            {step === 6 ? 
+            {step === 7 ? 
             <div className='completed'>
                 <h1>Completed!</h1>
             </div> 

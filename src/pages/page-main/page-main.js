@@ -7,14 +7,14 @@ import { observer } from 'mobx-react-lite';
 
 export const PageMain = observer(() =>
 {
-    useEffect(() => {
+    /*useEffect(() => {
         if (UserService.getQuest())
         {
             UserService.createQuest();
         }
         UserService.getQuestList();
         console.log(UserStore)
-    }, [])
+    }, [])*/
     return(
         <div className='page-main'>        
             <div className='app-container'>
@@ -44,8 +44,8 @@ export const PageMain = observer(() =>
                 <div className='app-pfp'></div>
                 <div className='app-bio'>
                     {
-                        UserStore.questionareList ?
-                        JSON.stringify(UserStore.questionareList[0])
+                        UserStore.questionare ?
+                        JSON.stringify(UserStore.questionare)
                         :
                         "" 
                     }

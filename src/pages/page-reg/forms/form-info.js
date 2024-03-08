@@ -6,7 +6,7 @@ export const FormInfo = (props) =>
     return(
         <div className='form'>        
             <h1>Заполните Ваш профиль</h1>
-            <h2>Имя{props.error && <sup className='error'>*</sup>}</h2>
+            <h2>Имя{props.error.field1 && <sup className='error'>*</sup>}</h2>
             <input
                 className='text-input'
                 placeholder='Полное имя'
@@ -19,7 +19,7 @@ export const FormInfo = (props) =>
                 value={props.formData.fullname}
             />
 
-            <h2>Дата рождения{props.error && <sup className='error'>*</sup>}</h2>
+            <h2>Дата рождения{props.error.field2 && <sup className='error'>*</sup>}</h2>
             <div className='birthday-input-container'>
                 <input
                     className='text-input'
@@ -67,8 +67,9 @@ export const FormInfo = (props) =>
                     value={props.formData.birthDate.year}
                 />
             </div>
+            {props.error.field2 && <p className='error'>Введите корректно день, месяц и год</p>}
 
-            <h2>Выберите пол{props.error && <sup className='error'>*</sup>}</h2>
+            <h2>Выберите пол{props.error.field3 && <sup className='error'>*</sup>}</h2>
             <div className='radio-container'>
                 <label className="radio-button-label" style={{backgroundColor: props.formData.gender === "Male" ? '#7653EB' : '#f2f2f2'}}>
                     <input
@@ -96,7 +97,7 @@ export const FormInfo = (props) =>
                 </label>
             </div>
 
-            <h2>Рост{props.error && <sup className='error'>*</sup>}</h2>
+            <h2>Рост{props.error.field4 && <sup className='error'>*</sup>}</h2>
             <input
                 className='text-input'
                 placeholder='См'
@@ -114,7 +115,7 @@ export const FormInfo = (props) =>
             <input
                 className='text-input'
                 placeholder='Введите текст'
-                style={{height: '100px'}}
+                style={{height: '90px'}}
                 onChange={(e) => {
                     props.updateFormData(
                     {
@@ -122,20 +123,7 @@ export const FormInfo = (props) =>
                         about: e.target.value,
                     })}}
                 value={props.formData.about}
-            />
-
-
-            <h2>Ваши фотографии</h2>
-            <div className='image-container'>
-                <img src='src\assets\img-temp\img1.jpg' alt=''/>
-                <svg xmlns="http://www.w3.org/2000/svg" width="25%" height="33%" viewBox="0 0 122 161" fill="none">
-                    <rect x="0.436279" width="121.564" height="160.857" rx="6.13958" fill="#F2F2F2"/>
-                    <path d="M45.8689 80.4285H76.5668" stroke="#AAAAAA" stroke-width="2.45583" stroke-linecap="round"/>
-                    <path d="M61.218 95.7775V65.0796" stroke="#AAAAAA" stroke-width="2.45583" stroke-linecap="round"/>
-                </svg>
-            </div>
-
-            {props.error && <p className='error' style={{marginBottom: '50px'}}>{props.error}</p>}
+                />
         </div>
     )
 }   

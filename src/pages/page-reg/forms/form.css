@@ -13,6 +13,8 @@ font-family: Montserrat;
 font-weight: 600;
 src: url("../../../assets/fonts/Montserrat-SemiBold.ttf");
 }
+
+/*GENERAL STYLES*/
 .form{
     width: 25vw;
     margin: 0 auto;
@@ -49,6 +51,10 @@ h3{
     margin-bottom: 6%;
 }
 
+input:focus {
+    outline: none;
+}
+
 .error{
     font-family: 'Inter';
     font-size: 14px;
@@ -56,55 +62,39 @@ h3{
 }
 
 
-/* (1) FORM START STYLES */
-
-.react-international-phone-input-container{
-    width: 100%;
-    height: fit-content;
-    background-color: #F2F2F2;
-    border: none;
-    border-radius: 10px;
+/* (1 + 2) EMAIL+PASSWORD FORM STYLES */
+.input-holder{
     display: flex;
-    margin-bottom: 15px;
-}
-
-.react-international-phone-input{
-    font-family: 'Inter';
-    font-size: 17px;
-    background: none;
-    border: 0;
+    position: relative;
+    flex-direction: row;
     width: 100%;
-    --react-international-phone-border-color: white;
-    --react-international-phone-background-color: #F2F2F2;
-    --react-international-phone-border-radius: 10px;
-    --react-international-phone-height: 45px;
-}
-
-.react-international-phone-country-selector{
-    --react-international-phone-border-radius: 10px;
-    --react-international-phone-country-selector-background-color: #F2F2F2;
-    --react-international-phone-country-selector-border-color: white;
     height: 45px;
-}
-
-.react-international-phone-country-selector-button{
-    --react-international-phone-height: 45px;
-}
-
-.number-input :focus{
-    color: black;
-}
-
-.wrong-text-input {
-    width: 100%;
     border-radius: 10px;
     background: #F2F2F2;
-    border: 1px solid red;
-    font-size: 17px;
-    height: 45px;
+    border: 0;
     margin-top: 1%;
+}
+
+.input-with-svg{
+    width: 100%;
+    background: #F2F2F2;
+    border: 0;
+    border-radius: 10px;
+    font-size: 17px;
     padding-left: 15px;
-    margin-bottom: 5%;
+}
+
+.icon-holder{
+    position: absolute;
+    border: none;
+    background-color: #F2F2F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    right: 5px;
+    top: 20%;
 }
 
 hr{
@@ -165,22 +155,8 @@ hr{
     background-color: #e2e2e2;
 }
 
-/*(2) FORM CODE STYLES*/
 
-.send-again {
-    margin: 4% auto 0 auto;
-    border: none;
-    background-color: white;
-    color: #7653EB;
-    cursor: pointer;
-    display: block;
-    font-family: 'Inter';
-    font-weight: 400;
-    font-size: 16px;
-}
-
-/*(3) FORM INFO*/
-
+/*(3) INFO FORM STYLES*/
 .text-input{
     width: 100%;
     border-radius: 10px;
@@ -190,40 +166,8 @@ hr{
     height: 45px;
     margin-top: 1%;
     padding-left: 15px;
-}
-
-.input-holder{
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    width: 100%;
-    height: 45px;
-    border-radius: 10px;
-    background: #F2F2F2;
-    border: 0;
-    margin-top: 1%;
-}
-
-.input-with-svg{
-    width: 100%;
-    background: #F2F2F2;
-    border: 0;
-    border-radius: 10px;
-    font-size: 17px;
-    padding-left: 15px;
-}
-
-.icon-holder{
-    position: absolute;
-    border: none;
-    background-color: #F2F2F2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    width: 30px;
-    right: 5px;
-    top: 20%;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .birthday-input-container{
@@ -238,25 +182,75 @@ hr{
     margin-bottom: 4%;
 }
 
-img{
-    width: 25%;
-    height: 33%;
-}
-
-.image-container{
+.about-input{
     width: 100%;
-    display: flex;
-    gap: 14px;
+    height: 20%;
+    border-radius: 10px;
+    background: #F2F2F2;
+    border: 0;
+    font-size: 17px;
+    height: 45px;
+    margin-top: 1%;
+    padding-left: 15px;
 }
 
-/*(4) PROFILE OPTIONS*/
 
+/*(4) PHOTO FORM STYLES*/
+.image-container {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 30% 30% 30%;
+    grid-gap: 5%;
+}
+
+.image-placeholder img{
+    width: 100%;
+    height: 157px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image-placeholder{
+    position: relative;
+    width: 100%;
+    height: 157px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.remove-img-button{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: none;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.add-photo-button {
+    width: 100%;
+    height: 157px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+.add-photo-button:hover {
+    background-color: #e2e2e2;
+}
+
+
+/*(5) PROFILE OPTIONS FORM STYLES*/
 .button-list {
     display: inline-block;
     width: 100%;
-  }
-  
-  .radio-button-label {
+}
+
+.radio-button-label {
     display: inline-block;
     color: black;
     border: none;
@@ -264,29 +258,29 @@ img{
     padding: 5px;
     border-radius: 30px;
     margin: 0 2% 2% 0;
-  }
-  
-  .radio-button-label input {
-    display: none;
-  }
-  
-  .radio-button-label:hover {
-    background-color: #e6e6e6; 
-  }
+}
 
-  .radio-button-label input:checked + .button-text{
+.radio-button-label input {
+    display: none;
+}
+
+.radio-button-label:hover {
+    background-color: #e6e6e6; 
+}
+
+.radio-button-label input:checked + .button-text{
     color: white;
-  }
-  
-  .button-text {
+}
+
+.button-text {
     padding: 0 10px;
     font-family: 'Inter';
     font-weight: 400;
     font-size: 14px;
-  }
+}
 
-  /*(5) INTERESTS LIST*/
 
+/*(6) INTERESTS LIST FORM STYLES*/
 .checkbox-input-holder{
     width: 100%;
     height: 88%;
@@ -324,10 +318,10 @@ img{
     font-size: 10px;
 }
 
-/*(6)*/
 
+/*(7) LOCATION FORM STYLES*/
 .location-form{
-    margin: 10% auto;
+    margin: 7% auto;
     display: block;
     width: 25%;
     text-align: center;
@@ -347,3 +341,69 @@ img{
     margin-top: 4%;
     cursor: pointer;
 }
+
+
+/*(TELEFONE FORM STYLES)
+.react-international-phone-input-container{
+    width: 100%;
+    height: fit-content;
+    background-color: #F2F2F2;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.react-international-phone-input{
+    font-family: 'Inter';
+    font-size: 17px;
+    background: none;
+    border: 0;
+    width: 100%;
+    --react-international-phone-border-color: white;
+    --react-international-phone-background-color: #F2F2F2;
+    --react-international-phone-border-radius: 10px;
+    --react-international-phone-height: 45px;
+}
+
+.react-international-phone-country-selector{
+    --react-international-phone-border-radius: 10px;
+    --react-international-phone-country-selector-background-color: #F2F2F2;
+    --react-international-phone-country-selector-border-color: white;
+    height: 45px;
+}
+
+.react-international-phone-country-selector-button{
+    --react-international-phone-height: 45px;
+}
+
+.number-input :focus{
+    color: black;
+}
+
+.wrong-text-input {
+    width: 100%;
+    border-radius: 10px;
+    background: #F2F2F2;
+    border: 1px solid red;
+    font-size: 17px;
+    height: 45px;
+    margin-top: 1%;
+    padding-left: 15px;
+    margin-bottom: 5%;
+}
+*/
+
+
+/*(FORM CODE STYLES)*/
+/*.send-again {
+    margin: 4% auto 0 auto;
+    border: none;
+    background-color: white;
+    color: #7653EB;
+    cursor: pointer;
+    display: block;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+}*/
